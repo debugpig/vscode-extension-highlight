@@ -1,0 +1,111 @@
+{
+	"name": "highlight",
+	"displayName": "highlight",
+	"description": "Highlight selected words",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.47.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+        "*"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "highlight.selectedWords",
+				"title": "Highlight Selected Words"
+			},
+			{
+				"command": "highlight.clearWords",
+				"title": "Clear Highlight Words"
+			}
+		],
+		"keybindings":[
+			{
+				"command": "highlight.selectedWords",
+				"key": "shift+f8"
+			},
+			{
+				"command": "highlight.clearWords",
+				"key": "ctrl+shift+f8"
+			}
+		],
+		"configuration":[
+			{
+				"title": "highlight.configuration",
+				"properties": {
+					"highlight.configuration.wholeWord": {
+						"type": "boolean",
+						"default": true
+					},
+					"highlight.configuration.ignoreCase": {
+						"type": "boolean",
+						"default": true
+					},
+					"highlight.configuration.colors": {
+						"type": "array",
+						"default": [
+							{
+								"light": "#b3d9ff",
+								"dark": "cyan"
+							},
+							{
+								"light": "#e6ffb3",
+								"dark": "pink"
+							},
+							{
+								"light": "#b3b3ff",
+								"dark": "lightgreen"
+							},
+							{
+								"light": "#ffd9b3",
+								"dark": "magenta"
+							},
+							{
+								"light": "#ffb3ff",
+								"dark": "cornflowerblue"
+							},
+							{
+								"light": "#b3ffb3",
+								"dark": "orange"
+							},
+							{
+								"light": "#ffff80",
+								"dark": "green"
+							},
+							{
+								"light": "#d1e0e0",
+								"dark": "red"
+							}
+						]
+					}
+				}
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"lint": "eslint src --ext ts",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile && npm run lint",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.47.0",
+		"@types/glob": "^7.1.1",
+		"@types/mocha": "^7.0.2",
+		"@types/node": "^13.11.0",
+		"eslint": "^6.8.0",
+		"@typescript-eslint/parser": "^2.30.0",
+		"@typescript-eslint/eslint-plugin": "^2.30.0",
+		"glob": "^7.1.6",
+		"mocha": "^7.1.2",
+		"typescript": "^3.8.3",
+		"vscode-test": "^1.3.0"
+	}
+}
