@@ -2,10 +2,15 @@
 	"name": "highlight",
 	"displayName": "highlight",
 	"description": "Highlight selected words",
+	"icon": "resource/icon.png",
 	"repository": {
 		"url": "https://github.com/debugpig/vscode-extension-highlight"
 	},
-	"version": "0.0.1",
+	"author": {
+		"name": "debugpig"
+	},
+	"publisher": "debugpig",
+	"version": "0.1.0",
 	"engines": {
 		"vscode": "^1.47.0"
 	},
